@@ -32,20 +32,22 @@
 \newcommand{\authorfirst}{Johnny}
 \newcommand{\authorMI}{B.~}
 \newcommand{\authorlast}{Goode}
-\newcommand{\degreefull}{Mas\-ter of Sci\-ence in En\-gi\-neer\-ing}  % force hyphenation at syllables if line breaks are required
+\newcommand{\degreefull}{Mas\-ter of Sci\-ence}  % force hyphenation at syllables if line breaks are required
 \newcommand{\degreeshort}{M.S.Egr.}
 \newcommand{\thesisordissertationlc}{Dissertation} % Make this uppercase
 \newcommand{\dept}{Department of Lollipops}
 \newcommand{\institution}{Wright State University} % Doubting you will
                                 % change this.
-\newcommand{\thesistitle}{Some Really Great Title That Provides a
-  Con\-cise View of the Topic Your Thesis Will Address} % Needes a line break
+%OhioLink submission requires thesis title in ALL UPPERCASE
+\newcommand{\thesistitle}{SOME REALLY GREAT TITLE THAT PROVIDES A
+  CON\-CISE VIEW OF THE TOPIC YOUR THESIS WILL ADDRESS} % Needs a line break
 \newcommand{\bachdegreeshort}{B.S.M.E.} % Bachelor degree short
 \newcommand{\bachinstitution}{Universal University} % Bachelor degree institution
 \newcommand{\bachyear}{2004}% Bachelor degree year
 %No spaces should be before or after this title.
 \newcommand{\pdfsubject}{a short paraphrase of your title or focus of your thesis}
 \newcommand{\pdfkeywords}{keyword 1, keyword 2, keyword 3, keyword 4}
+\newcommand{\pdflang}{en-US}
 \newcommand{\yearcomplete}{2013}
 
 %-----------------------------------------------------------------------
@@ -106,7 +108,8 @@
                      pdftitle={\thesistitle},
                      pdfsubject={\pdfsubject},
                      pdfkeywords={\pdfkeywords},
-                     }
+                     pdflang={\pdflang}
+		     }
 % \normalem
 \pagenumbering{roman}
 \pagestyle{plain}
@@ -153,6 +156,8 @@ You don't need both signature pages. Please comment out unnecessary lines in the
 %
 %========================
 % Start editing below.
+% Note: For submission to OhioLink, WSU.sty needs modified to correctly display the date on Abstract Page (to the date of your defense)
+% 	PhD date change at line 123, Masters date change at line 194
 %========================
 The abstract should succinctly summarize summarize an the contents of the thesis, stating the problem, the procedure or methods used, the results, and any conclusions.  Doctoral dissertation abstracts should not exceed 350 words.  Master's thesis abstracts should not exceed 150 words.
 %%%%%%%%%%%%%%%%%%
@@ -462,6 +467,8 @@ Below are some programs for Mac OS:\@
 %-----------------------------------------------------------------------
 \clearpage \phantomsection\ %used to correctly anchor hyperlinks, just
                            %trust us and leave it alone.
+			   %note: \phantomsection\ may cause an empty page space before Bibliography, 
+			   %	  incorrectly displaying start of page for the TOC
 \renewcommand\baselinestretch{1.0}
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{plain}
